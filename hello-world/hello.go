@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+const englishHelloPrefix = "Hello, "
+
 func Hello(name string) string {
 /* 	s1:= "test2"
 	h:= fmt.Sprintf("Hello, %s %s", name, s1)
@@ -19,13 +21,20 @@ func Hello(name string) string {
 	h:= s4 + name
 	return h
 
-// got %q want %q", got, want
-// return "Hello, " + name
+	// got %q want %q", got, want
+	// return "Hello, " + name
+}
 
+func HelloEmptyString(name string) string {
+	if name == "" {
+		name = "World"
+	}
+	return englishHelloPrefix + name
 }
 
 func main() {
 	fmt.Println(Hello("apple"))
+	fmt.Println(HelloEmptyString("EWA"))
 }
 
 // Shift+Alt+/
