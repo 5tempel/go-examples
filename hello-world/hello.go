@@ -32,9 +32,25 @@ func HelloEmptyString(name string) string {
 	return englishHelloPrefix + name
 }
 
+
+func HelloLanguage(name, language string) string {
+	greeting := "Hello, "
+	if name == "" {
+		name = "World"
+	}
+	if language == "Spanish" {
+		greeting = "Hola, "
+	} else if language == "Polish" {
+		greeting = "Czesc, "
+	}
+
+	return greeting + name
+}
+
 func main() {
 	fmt.Println(Hello("apple"))
 	fmt.Println(HelloEmptyString("EWA"))
+	fmt.Println(HelloLanguage("EWA", "Polish"))
 }
 
 // Shift+Alt+/
