@@ -47,6 +47,20 @@ func HelloLanguage(name, language string) string {
 	return greeting + name
 }
 
+func HelloLSwitch(name, language string) string {
+	greeting := "Hello, "
+	if name == "" {
+		name = "World"
+	}
+	switch language {
+	case "Spanish" : greeting = "Hola, "
+	case "Polish" : greeting = "Czesc, "
+	default : greeting = "Hello, "
+	}
+
+	return greeting + name
+}
+
 func main() {
 	fmt.Println(Hello("apple"))
 	fmt.Println(HelloEmptyString("EWA"))

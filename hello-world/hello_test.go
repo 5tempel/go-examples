@@ -20,8 +20,8 @@ func assertCorrectMessage(t testing.TB, got, want string) {
 func TestHelloEmptyString(t *testing.T) {
 	t.Run("saying hello to people", func(t *testing.T) {
 		got := HelloEmptyString("Chris") //calling function for testing
-		want := "Hello, Chris"	//expected value
-		
+		want := "Hello, Chris"           //expected value
+
 		if got != want {
 			t.Errorf("got %q want %q", got, want)
 		}
@@ -39,7 +39,7 @@ func TestHelloLanguage(t *testing.T) {
 		got := HelloLanguage("Elodie", "Spanish")
 		want := "Hola, Elodie"
 		assertCorrectMessage(t, got, want)
-	})	
+	})
 	t.Run("in Polish", func(t *testing.T) {
 		got := HelloLanguage("Zosia", "Polish")
 		want := "Czesc, Zosia"
@@ -52,6 +52,29 @@ func TestHelloLanguage(t *testing.T) {
 	})
 	t.Run("in English if unknow language", func(t *testing.T) {
 		got := HelloLanguage("Zosia", "1")
+		want := "Hello, Zosia"
+		assertCorrectMessage(t, got, want)
+	})
+}
+
+func TestHelloLSwitch(t *testing.T) {
+	t.Run("in Spanish", func(t *testing.T) {
+		got := HelloLSwitch("Elodie", "Spanish")
+		want := "Hola, Elodie"
+		assertCorrectMessage(t, got, want)
+	})
+	t.Run("in Polish", func(t *testing.T) {
+		got := HelloLSwitch("Zosia", "Polish")
+		want := "Czesc, Zosia"
+		assertCorrectMessage(t, got, want)
+	})
+	t.Run("in English if empty string", func(t *testing.T) {
+		got := HelloLSwitch("Zosia", "")
+		want := "Hello, Zosia"
+		assertCorrectMessage(t, got, want)
+	})
+	t.Run("in English if unknow language", func(t *testing.T) {
+		got := HelloLSwitch("Zosia", "1")
 		want := "Hello, Zosia"
 		assertCorrectMessage(t, got, want)
 	})
