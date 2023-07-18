@@ -51,7 +51,7 @@ jobs:
           cd hello-world
           go test -v
           pwd
-          echo "removed hidden go-examples - Shortcut.lnk from integers directory"
+          echo "removed go.mod file from arrays directory"
 
 
 
