@@ -51,7 +51,7 @@ jobs:
           cd hello-world
           go test -v
           pwd
-          echo "removed go.mod file from arrays directory"
+          echo "removed integers folder"
 
 
 
