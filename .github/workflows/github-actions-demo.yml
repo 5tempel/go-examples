@@ -43,10 +43,13 @@ jobs:
           cd hello-world
           pwd 
           ls -la
-          go build -o hello -v ./...
+          go build -o hello ./...
+          echo "Go compilation has been completed"
 
       - name: Test Hello World
-        run: go test -v ./...
+        run: |
+          cd hello-world
+          go test -v ./...
 
 
 
