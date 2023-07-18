@@ -51,7 +51,7 @@ func TestHelloLanguage(t *testing.T) {
 		assertCorrectMessage(t, got, want)
 	})
 	t.Run("in English if unknow language", func(t *testing.T) {
-		got := HelloLanguage("Zosia", "w")
+		got := HelloLanguage("Zosia", "1")
 		want := "Hello, Zosia"
 		assertCorrectMessage(t, got, want)
 	})
@@ -74,7 +74,7 @@ func TestHelloLSwitch(t *testing.T) {
 		assertCorrectMessage(t, got, want)
 	})
 	t.Run("in English if unknow language", func(t *testing.T) {
-		got := HelloLSwitch("Zosia", "w")
+		got := HelloLSwitch("Zosia", "1")
 		want := "Hello, Zosia"
 		assertCorrectMessage(t, got, want)
 	})
