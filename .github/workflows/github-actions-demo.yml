@@ -49,7 +49,7 @@ jobs:
       - name: Test Hello World
         run: |
           cd hello-world
-          go test ./
+          go test -v ./
 
 
 
