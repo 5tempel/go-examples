@@ -1,4 +1,4 @@
-package main
+package arrays
 
 // function takes array of integers, iterates through the array using range and return the sum of all numbers
 func Sum(numbers [5]int) int {
@@ -8,6 +8,7 @@ func Sum(numbers [5]int) int {
 	}
 	return sum
 }
+
 /*
 // function takes array of integers and return the sum of all numbers
 func Sum1(numbers [5]int) int {

@@ -38,21 +38,13 @@ jobs:
         with:
           go-version: '1.20.6'
 
-      - name: Build Hello World (compile)
+      - name: Build go-examples (compile)
         run: |
-          cd hello-world
           pwd 
           ls -la
-          go build -o hello
-          echo "Go compilation has been completed"
+          go build ./...
+          echo "Go compilation has been completed for go-examples module"
 
-      - name: Test Hello World
+      - name: Test go-examples
         run: |
-          cd hello-world
-          go test -v
-          pwd
-          echo "removed integers folder"
-
-
-
-
+          go test -v ./...

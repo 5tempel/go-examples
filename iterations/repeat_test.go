@@ -1,4 +1,4 @@
-package iteration
+package iterations
 
 import (
 	"fmt"
@@ -7,9 +7,9 @@ import (
 )
 
 /*
-helper function accepts a "test", the acctual and expected value
+helper function accepts a "test", the actual and expected value
 and fails the test with an error message when the expected value
-doesn't match the acctual vaue
+doesn't match the actual value
 */
 func assertCorrectMessage(t testing.TB, got, want string) {
 	t.Helper()
@@ -92,7 +92,7 @@ func ExampleRepeat() {
 	// Output3: "This is not a character"
 */
 
-// benchmark code runs b.N times and measures how long it taks
+// benchmark code runs b.N times and measures how long it task
 func BenchmarkRepeatN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		RepeatN("a")
