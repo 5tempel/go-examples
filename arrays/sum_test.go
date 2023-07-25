@@ -1,4 +1,4 @@
-package main
+package arrays
 
 import (
 	"fmt"
@@ -18,13 +18,13 @@ func TestSum(t *testing.T) {
 }
 
 func ExampleSum() {
-	a1 := Sum([5]int{2,3,1,5,9})
+	a1 := Sum([5]int{2, 3, 1, 5, 9})
 	fmt.Println(a1)
 	//Output: 20
 }
 
 func BenchmarkSum(b *testing.B) {
-	for i := 0; i < b.N; i++{
-		Sum([5]int{2,3,1,5,9})
+	for i := 0; i < b.N; i++ {
+		Sum([5]int{2, 3, 1, 5, 9})
 	}
 }
