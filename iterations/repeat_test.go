@@ -75,6 +75,7 @@ func TestCharValidation(t *testing.T) {
 	*/
 }
 
+// example function, see documentation for more info: https://pkg.go.dev/testing#hdr-Examples
 func ExampleRepeat() {
 	r1 := RepeatN("x")
 	fmt.Println(r1)
@@ -92,7 +93,7 @@ func ExampleRepeat() {
 	// Output3: "This is not a character"
 */
 
-// benchmark code runs b.N times and measures how long it task
+// benchmark function runs b.N times and measures how long it takes, see documentation for more info: https://pkg.go.dev/testing#hd
 func BenchmarkRepeatN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		RepeatN("a")
