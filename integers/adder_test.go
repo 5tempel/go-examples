@@ -14,6 +14,7 @@ func TestAdder(t *testing.T) {
 	}
 }
 
+// example function, see documentation for more info: https://pkg.go.dev/testing#hdr-Examples
 func ExampleAdd() {
 	sum := Add(1, 5)
 	fmt.Println(sum)
