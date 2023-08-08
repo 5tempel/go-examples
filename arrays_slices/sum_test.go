@@ -3,6 +3,7 @@ package arrays_slices
 import (
 	"fmt"
 	"testing"
+	"reflect"
 )
 
 /*
@@ -67,4 +68,30 @@ func TestSumSlices(t *testing.T) {
 
 }
 
-// Next topic is to write a new function called SumAll: https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices#write-the-test-first-2
+
+// TestSumAll - https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices#write-the-test-first-2
+func TestSumAll(t *testing.T) {
+
+	got := SumAll([]int{1, 2}, []int{0, 9}, []int{20, 5, 4, 33}, []int{-5, -20, 0, 2})
+	
+	// Slice can only be cmpared to nil
+	t.Run("testing if slice is nil", func(t *testing.T) {
+		
+		if got == nil {
+		t.Errorf("got = %d is nil", got)
+		}
+	})
+
+	// reflect.DeepEqual is useful for seeing if any two variables are the same. 
+	// Note reflect.DeepEqual is not "type safe" - the code will compile even if you did something a bit silly
+	t.Run("comparing two slices with reflect.DeepEqual", func(t *testing.T) {
+		want := []int{3, 9, 62, -23}
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("got %v want %v", got, want)
+		}
+	})
+
+	// Next time start with Refactor https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices#refactor-2
+
+}
