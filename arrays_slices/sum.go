@@ -34,3 +34,17 @@ func SumSlices(numbers []int) int {
 	}
 	return sum
 }
+
+/*
+SumAll takes a varying number of slices, returns a new slice containing the totals for each slice passed in.
+*/
+func SumAll(numbersToSum ...[]int) []int {
+	lengthOfNumbers := len(numbersToSum)
+	sums := make([]int, lengthOfNumbers)
+
+	for i, numbers := range numbersToSum {
+		sums[i] = SumSlices(numbers)
+	}
+
+	return sums
+}
