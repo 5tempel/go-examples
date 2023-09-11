@@ -34,6 +34,15 @@ type Circle struct {
 	Radius float64
 }
 
+/*
+	Triangle struct
+*/
+type Triangle struct {
+	Base  float64
+	Height float64
+}
+
+
 /* 
 	StructPerimeter takes Rectangle struct that has 2 fields Width and Height. It returns the rectangle's perimeter.
 */	
@@ -69,9 +78,18 @@ func (c Circle) Area() float64 {
 	return math.Pi * c.Radius * c.Radius
 }
 
+/*
+	Area method for Triangle
+*/
+func (t Triangle) Area() float64 {
+	return (t.Base * t.Height) / 2
+}
+
 // Interfaces
 /*
 	Interface - decalring our own type as a Shape interface 
+	You can define functions that can be used by different types (parametric polymorphism)
+	https://en.wikipedia.org/wiki/Parametric_polymorphism
 */
 type Shape interface {
 	Area() float64
