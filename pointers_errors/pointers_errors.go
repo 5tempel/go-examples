@@ -34,7 +34,7 @@ func (w *Wallet) Balance() int {
 }
 
 // Refactor https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/pointers-and-errors#refactor
-// creating a new type Bitcoin
+// creating a new type Bitcoin. To make Bitcoin use syntax Bitcoin(10).
 // type MyName OriginalType
 type Bitcoin int
 
@@ -42,10 +42,32 @@ type BitcoinWallet struct {
 	balance Bitcoin
 }
 
+// methods on BitcoinWallet
 func (bw *BitcoinWallet) BitcoinDeposit(amount Bitcoin) {
 	bw.balance += amount
 }
 
 func (bw *BitcoinWallet) BitcoinBalance() Bitcoin {
 	return bw.balance
+}
+
+func (bw *BitcoinWallet) BitcoinWithdraw(amount Bitcoin) {
+	bw.balance -= amount
+}
+
+/*
+	MyStringer Interface
+	This interface is defined in the fmt package
+	and lets you define how your type is printed when used
+	with the %s format string in prints.
+*/
+/*
+type MyStringer interface {
+	String() string
+}
+*/
+// the syntax for creating a method on a type declaration
+// is the same as it is on a struct.
+func (b Bitcoin) String() string {
+	return fmt.Sprintf("%d BTC", b)
 }
